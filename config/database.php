@@ -123,6 +123,17 @@ return [
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
         ),
+        
+        'app_mobile' => array(
+            'driver'    => 'mysql',
+            'host'      => 'altcel2.com',
+            'database'  => 'altcel2_app_mobile',
+            'username'  => 'altcel2_app_mobile',
+            'password'  => 'Adm1nAltcel2',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_general_ci',
+            'prefix'    => '',
+        ),
 
         'pgsql' => [
             'driver' => 'pgsql',

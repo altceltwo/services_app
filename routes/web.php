@@ -17,4 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('login','AuthenticationController@login');
+Route::post('/login','AuthenticationController@login');
+
+Route::post('/registro', 'AuthenticationController@register');
