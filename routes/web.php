@@ -25,3 +25,6 @@ Route::get('getUser', 'AuthenticationController@getUser');
 
 //Dispositos por usuario
 Route::get('devices', 'DeviceController@getDevice');
+Route::post('/login','AuthenticationController@login');
+
+Route::post('/registro', 'AuthenticationController@register');

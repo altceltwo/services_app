@@ -37,6 +37,29 @@ class AuthenticationController extends Controller
         $data = DB::connection('app_mobile')->table('users')->insert([
             'name'=> $name
         ]);
+        $email = $request['email'];
+        $phone = $request['phone'];
+        $password = $request['password'];
+        $passwordConfir = $request['passwordConfir'];
+
+
+        if($password == $passwordConfir){
+
+            $NumeroExistente = DB::connection('app_mobile')->table('users')
+            ->select('phone')
+            ->where('phone', '=', $phone)->exists();
+
+            if ($NumeroExistente == 1){
+                return response()->json(['http_code'=>'400','message'=>'Número se encuentra registrado']);
+            }else{
+                $newPassword = Hash::make($password);
+                $data = DB::connection('app_mobile')->table('users')->insert(['name'=>$name, 'email'=>$email, 'phone'=>$phone, 'password'=>$newPassword]);
+                return response()->json(['http_code'=>'200','message'=>'Registro Existoso']);
+            }
+            
+        }else{
+            return response()->json(['http_code'=>'400','message'=>'Verifica tu password que coincidan']);
+        }
         
     }
 }
