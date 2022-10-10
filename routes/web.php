@@ -17,4 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('login','AuthenticationController@login');
+//Autenticación
+Route::post('/login','AuthenticationController@login');
+Route::post('register','AuthenticationController@register');
+Route::post('updateUser', 'AuthenticationController@updateUser');
+Route::get('getUser', 'AuthenticationController@getUser');
+
+//Dispositos por usuario
+Route::get('devices', 'DeviceController@getDevice');
