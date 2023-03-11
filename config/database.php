@@ -79,9 +79,9 @@ return [
 
         'crm2' => array(
             'driver'    => 'mysql',
-            'host'      => '10.44.0.70',
+            'host'      => '10.44.0.15',
             'database'  => 'crm',
-            'username'  => 'admin',
+            'username'  => 'root',
             'password'  => 'Adm1nl1nux$',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
